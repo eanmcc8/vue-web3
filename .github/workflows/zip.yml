@@ -1,0 +1,32 @@
+name: Unzip and Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  unzip_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+
+      - name: Unzip file to main directory
+        run: |
+          unzip kolirt vue-web3-auth-vite.zip -d .
+
+      - name: Add and commit changes
+        run: |
+          git add .
+          git commit -m "Unzipped archive into main directory" || echo "No changes to commit"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

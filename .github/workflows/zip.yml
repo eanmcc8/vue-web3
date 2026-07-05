@@ -19,7 +19,7 @@ jobs:
 
       - name: Unzip file to main directory
         run: |
-          unzip kolirt vue-web3-auth-vite.zip -d .
+          unzip vue-web3-auth-vite.zip -d .
 
       - name: Add and commit changes
         run: |

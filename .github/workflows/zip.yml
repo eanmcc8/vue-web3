@@ -25,8 +25,9 @@ jobs:
         run: |
           git add .
           git commit -m "Unzipped archive into main directory" || echo "No changes to commit"
-
+          
       - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

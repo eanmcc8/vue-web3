@@ -12,8 +12,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit -p tsconfig.json --composite false",
-    "lint": "prettier --check \"**/*.{ts,js,cjs,vue,json,prettierrc}\"",
-    "format": "prettier --write \"**/*.{ts,js,cjs,vue,json,prettierrc}\""
+    "lint": "prettier --check \"**/*.{ts,js,vue,json}\"",
+    "format": "prettier --write \"**/*.{ts,js,vue,json}\""
   },
   "dependencies": {
     "@kolirt/vue-web3-auth": "^2.3.4",
